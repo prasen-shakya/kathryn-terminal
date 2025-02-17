@@ -1,0 +1,156 @@
+body {
+    background: linear-gradient(135deg, #1e1e1e, #0c0c0c);
+    color: #f5f5f5;
+    font-family: "Cascadia Code", "Courier New", monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+#terminal-container {
+    width: 90%;
+    max-width: 800px;
+    height: 500px;
+    background: rgba(30, 30, 30, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#terminal-title {
+    background: rgba(45, 45, 45, 0.9);
+    padding: 8px 12px;
+    color: white;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#terminal-title .buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.terminal-btn {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.terminal-btn:hover {
+    transform: scale(1.1);
+}
+
+.close-btn {
+    background-color: #ff5f56;
+}
+
+.min-btn {
+    background-color: #ffbd2e;
+}
+
+.max-btn {
+    background-color: #27c93f;
+}
+
+#terminal {
+    flex: 1;
+    padding: 12px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    font-size: 14px;
+    display: flex;
+    scroll-behavior: smooth;
+}
+
+#output {
+    width: 100%;
+}
+
+#output div {
+    padding-bottom: 6px;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+#input-line {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-size: 14px;
+    white-space: nowrap;
+    background: rgba(30, 30, 30, 0.9);
+}
+
+#input-line span {
+    color: #f5f5f5;
+    margin-right: 8px;
+    font-family: inherit;
+    user-select: none;
+}
+
+#command {
+    background: none;
+    border: none;
+    color: #f5f5f5;
+    font-family: inherit;
+    font-size: inherit;
+    width: 100%;
+    outline: none;
+    caret-color: white;
+    padding: 0;
+    margin: 0;
+    height: 20px;
+    line-height: 20px;
+}
+
+
+/* Custom Scrollbar */
+#terminal::-webkit-scrollbar {
+    width: 8px;
+}
+
+#terminal::-webkit-scrollbar-thumb {
+    background-color: #444;
+    border-radius: 4px;
+}
+
+#terminal::-webkit-scrollbar-track {
+    background-color: #222;
+}
+
+a {
+    color: #FF6347;
+    /* A nice coral color for the link */
+    text-decoration: none;
+    /* Remove underline */
+    font-weight: bold;
+    /* Make it bold for emphasis */
+}
+
+a:hover {
+    color: #FF4500;
+    /* Darker red when hovered */
+    text-decoration: underline;
+    /* Add underline on hover for visual feedback */
+}
